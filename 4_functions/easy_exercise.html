@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easy Exercises</title>
+</head>
+<body>
+  <script>
+    //7a,7b
+    function greet(name){
+      console.log(`Hello ${name}`);
+    }
+    greet('Abdullah');
+
+    //7c
+    function greet(name){
+      if(!name){
+        console.log('Hi there !!');
+      }
+      else{
+        console.log(`Hello ${name}`);
+      }
+    }
+    greet();
+
+    //7d
+    function degreeToF(degree){
+      let F = ((degree * 9) / 5) + 32;
+      return F;
+    }
+    let degree = 25;
+    let F=degreeToF(degree);
+    //console.log(`${degree}C -> ${F}F`);
+
+    //7e
+    function F_to_degree(F){
+      let degree = (F - 32) * 5 / 9;
+      return degree;
+    }
+    degree = F_to_degree(F);
+    //console.log(`${F}F -> ${degree}C`);
+
+    //7f
+    const temp = 77;
+    const unit = 'F';
+
+    convertTemprature(temp, unit)
+
+    function convertTemprature(temp, unit){
+      if(unit === 'C'){
+        const convertedTemp = degreeToF(temp);
+        console.log(`${temp}C -> ${convertedTemp}F`);
+      }
+      else if(unit === 'F'){
+        const convertedTemp = F_to_degree(temp);
+        console.log(`${temp}F -> ${convertedTemp}C`);
+      }
+    }
+
+    //7g,7h,7i
+
+    const length = 100;
+    const from = 'km';
+    const to = 'miles';
+
+    const ans = convertLength(length, from, to);
+    printMsg(ans, from, to,length);
+
+    //function to convert length
+    function convertLength(length, from, to){
+      if(from === 'km'){
+        if(to === 'miles'){
+          const miles = length * 0.621;
+          return miles;
+        }
+        else if (to === 'ft'){
+          const ft = length * 3280.84;
+          return ft;
+        }
+      }
+
+      else if(from === 'miles'){
+        if(to === 'km'){
+          const km = length * 1.609344;
+          return km;
+        }
+        else if(to === 'ft'){
+          const ft = length * 5280;
+          return ft;
+        }
+      }
+
+      else if (from === 'ft'){
+        if(to === 'miles'){
+          const miles = length / 5280;
+          return miles;
+        }
+        else if(to === 'km'){
+          const km = length * 0.0003048;
+          return km;
+        }
+      }
+    }
+
+    //helper function to check unit validity 
+    function isValidUnit(unit){
+    return unit === 'km' || unit === 'miles' || unit === 'ft';
+  }
+
+    //printing the msg
+    function printMsg(ans, from, to, length){
+      if(!isValidUnit(from)){
+        console.log(`Invalid unit: ${from}`);
+      }
+      else if(!isValidUnit(to)){
+        console.log(`Invalid unit: ${to}`);
+      }
+      else{
+        console.log(`${length}${from} -> ${ans}${to}`);
+      }
+    }
+
+
+  </script>
+</body>
+</html>
