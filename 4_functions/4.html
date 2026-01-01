@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+    function f1(){
+      console.log('function 1');
+      console.log('hello');
+    }
+    f1();
+    f1();
+
+    
+
+    //parameters
+    function calculateTax(money, taxPercent){
+      return (money * taxPercent);
+    }
+    console.log(`${calculateTax(10000, 0.2)} is the tax amount on 10000`);
+
+
+
+    //default value in parameters 
+    function calculateTax(money, taxPercent=0.1){
+      return (money * taxPercent);
+    }
+    console.log(`${calculateTax(10000)} is the tax amount on 10000`);
+
+  </script>
+</body>
+</html>
