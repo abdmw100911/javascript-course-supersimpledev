@@ -20,58 +20,109 @@
   </button>
 
   <button onclick="
-  cartQuantity++;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === maxCartQuantity)
+  {
+    alert('The Cart is Full');
+  }
+  else{
+    cartQuantity++;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   "
   >
     Add to Cart
   </button>
 
   <button onclick="
-  cartQuantity+=2;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+    if(cartQuantity === maxCartQuantity)
+  {
+    alert('The Cart is Full');
+  }
+  else
+  {
+    cartQuantity+=2;
+    console.log(`Cart Quantity: ${cartQuantity}`); 
+  }
   ">
     +2
   </button>
 
   <button onclick="
-  cartQuantity=cartQuantity+3;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+    if(cartQuantity === maxCartQuantity)
+  {
+    alert('The Cart is Full');
+  }
+  else
+  {
+    cartQuantity=cartQuantity+3;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     +3
   </button>
 
   <button onclick="
-  cartQuantity+=4;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === maxCartQuantity)
+  {
+    alert('The Cart is Full');
+  }
+  else
+  {
+    cartQuantity+=4;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     +4
   </button>
 
   <button onclick="
-  cartQuantity+=5;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === maxCartQuantity)
+  {
+    alert('The Cart is Full');
+  }
+  else{
+    cartQuantity+=5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     +5
   </button>
 
   <button onclick="
-  cartQuantity--;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === 0)
+  {
+    alert('Not enough items in the cart');
+  }
+  else{
+    cartQuantity--;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     Remove from Cart
   </button>
 
   <button onclick="
-  cartQuantity-=2;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === 0)
+  {
+    alert('Not enough items in the cart');
+  }
+  else{
+    cartQuantity-=2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     -2
   </button>
 
   <button onclick="
-  cartQuantity-=3;
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  if(cartQuantity === 0)
+  {
+    alert('Not enough items in the cart');
+  }
+  else{
+    cartQuantity-=3;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  }
   ">
     -3
   </button>
@@ -87,6 +138,7 @@
     let cartQuantity = 0;
     //camelCase covention
     //most commonly used in javascript for naming variables
+    let maxCartQuantity = 10;
   </script>
 </body>
 </html>
