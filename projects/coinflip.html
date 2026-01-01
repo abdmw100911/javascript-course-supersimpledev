@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>coin flip game</title>
+</head>
+<body>
+  <p>
+    COIN FLIP GAME
+  </p>
+  <button onclick="
+  coin=Math.random();
+  flipResult='';
+  if(coin > 0 && coin <= 1/2){
+      flipResult='Heads'
+    }
+    else if(coin > 1/2 && coin <= 1 ){
+      flipResult='Tails';
+    }
+
+    result='';
+    guess='Heads';
+    if(guess === flipResult){
+      result='You Win';
+    }
+    else{
+      result='You Lose';
+    }
+
+    alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}`);
+  ">
+    Heads</button>
+
+  <button onclick="
+  coin=Math.random();
+  flipResult='';
+  if(coin > 0 && coin <= 1/2){
+      flipResult='Heads'
+    }
+    else if(coin > 1/2 && coin <= 1 ){
+      flipResult='Tails';
+    }
+
+    result='';
+    guess='Tails';
+    if(guess === flipResult){
+      result='You Win';
+    }
+    else{
+      result='You Lose';
+    }
+
+    alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}`);
+  ">
+    Tails</button>
+
+  <script>
+    let flipResult='';
+    let result='';
+    let guess=''
+  </script>
+</body>
+</html>
