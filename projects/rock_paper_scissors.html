@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissor</title>
 </head>
 <body>
@@ -33,19 +31,39 @@
     Reset Score
   </button>
   <script>
-    score = {
-      wins:0,
-      losses:0,
-      ties:0
-    };
 
+    //fetching updated score from localStorage
+    //assigning localStorage data to score , if localStorage === null(falsy), assign origin score object
+    //used default operator shortcut 
+    let score = JSON.parse(localStorage.getItem('score')) || {
+        wins:0,
+        losses:0,
+        ties:0
+      };
+
+    //function for resetting score
     function resetScore(){
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
+
+      //deleting data from local storage
+      localStorage.removeItem('score');
+
     alert(`Score Reset
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
+
+    //turned this into shortcut above(the first line)
+    /*
+    if(!score){
+      score = {
+        wins:0,
+        losses:0,
+        ties:0
+      };
+    }*/
+
     function playGame(userMove){
 
       //computer picks move
@@ -116,6 +134,9 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       else if (result === 'Tie'){
         score.ties += 1;
       }
+
+      //storing updated score in local storage
+      localStorage.setItem('score',JSON.stringify(score));
 
       alert(`You Picked ${userMove}, Computer picked ${computerMove}, ${result}
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
