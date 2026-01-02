@@ -6,6 +6,7 @@
 </head>
 <body>
   <script>
+    /*
     //objects let us group and use multiple related values together
 
     //object
@@ -33,6 +34,101 @@
     //deleting a property
     delete product.quantity;
     console.log(product);
+
+    */
+
+    /*
+
+    //bracket notation -> to define and access propery in objects
+    const product2 = {
+      name:'shirt',
+    //delivery-time:'1 day' -> this will give error
+      ['delivery-time']:'1 day' 
+    };
+
+    console.log(product2);
+
+    //console.log(product2.delivery-time); //this gives error as well
+
+    console.log(product2['delivery-time']);
+    console.log(product2['name']);
+
+    */
+
+    /*
+    //nested object
+    const product3 = {
+      'name':'socks',
+      rating:{
+        stars:4.5,
+        count:99
+      }
+    };
+
+    console.log(product3.rating.stars);
+    console.log(product3['rating']['stars'])
+    */
+
+    /*
+    //function inside object ->this is called a method
+    const product4 = {
+      func: function f1(){
+        console.log('this is a function inside object [or a method]');
+      }
+    }
+    product4.func();
+
+    //console.log() is a method , where console is a object and inside it log is a function
+
+    console.log(typeof console); //object
+    console.log(typeof console.log)//function
+    console.log(typeof product4.func);//function
+    console.log(typeof product4);
+    */
+
+    /*
+    //Built in objects -> JSON OBJECT
+    //a json object is similar to javascript objects but has less features,it doesnot store functions inside it like javascript object
+    //json object is used to transfer data and store data between computers, thus it is more universal
+
+    //this is a javascript object
+    const product5 = {
+      name:'football',
+      'delivery-time':'2 day',
+      rating:{
+        stars:5,
+        count:100
+      },
+      func: function f1(){
+        console.log('this is a function inside a javascript object')
+      }
+    }
+    
+    //converting javascript object to json
+    console.log(product5);
+    console.log(typeof product5) //object
+
+    jsonobj = JSON.stringify(product5); 
+    console.log(jsonobj);
+    console.log(typeof jsonobj); //string
+
+    //converting json back to javascript object
+    javascrobj = JSON.parse(jsonobj);
+    console.log(javascrobj);
+    console.log(typeof javascrobj);
+    */
+   
+    //localStorage - built in object
+    //more permanent storage than variable 
+    //stores value even after page is refreshed
+    //localStorage.setItem('text used to 'get' the stored data', 'string to be stored')
+    //note: localStorage , only accepts strings to store
+
+    localStorage.setItem('msg','hello world');
+
+    //localStorage.getItem('text used to 'get' the stored data');
+    //used to access the stored data
+    console.log(localStorage.getItem('msg'));
 
   </script>
 </body>
