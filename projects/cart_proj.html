@@ -14,131 +14,100 @@
   </p>
 
   <button onclick="
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  Show();
   ">
     Show Quantity
   </button>
 
   <button onclick="
-  if((cartQuantity + 1) > maxCartQuantity)
-  {
-    alert('EXCEEDS CART MAX QUANTITY (10)');
-  }
-  else{
-    cartQuantity++;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Add(1);
   "
   >
     Add to Cart
   </button>
 
   <button onclick="
-    if((cartQuantity + 2) > maxCartQuantity)
-  {
-    alert('EXCEEDS CART MAX QUANTITY (10)');
-  }
-  else
-  {
-    cartQuantity+=2;
-    console.log(`Cart Quantity: ${cartQuantity}`); 
-  }
+  Add(2);
   ">
     +2
   </button>
 
   <button onclick="
-    if(( cartQuantity + 3) > maxCartQuantity)
-  {
-    alert('EXCEEDS CART MAX QUANTITY (10)');
-  }
-  else
-  {
-    cartQuantity=cartQuantity+3;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Add(3);
   ">
     +3
   </button>
 
   <button onclick="
-  if((cartQuantity + 4) > maxCartQuantity)
-  {
-    alert('EXCEEDS CART MAX QUANTITY (10)');
-  }
-  else
-  {
-    cartQuantity+=4;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Add(4);
   ">
     +4
   </button>
 
   <button onclick="
-  if((cartQuantity + 5) > maxCartQuantity)
-  {
-    alert('EXCEEDS CART MAX QUANTITY (10)');
-  }
-  else{
-    cartQuantity+=5;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Add(5);
   ">
     +5
   </button>
 
   <button onclick="
-  if((cartQuantity - 1) < 0)
-  {
-    alert('Not enough items in the cart');
-  }
-  else{
-    cartQuantity--;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Remove(1);
   ">
     Remove from Cart
   </button>
 
   <button onclick="
-  if((cartQuantity - 2) < 0)
-  {
-    alert('Not enough items in the cart');
-  }
-  else{
-    cartQuantity-=2;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Remove(2);
   ">
     -2
   </button>
 
   <button onclick="
-  if((cartQuantity - 3) < 0)
-  {
-    alert('Not enough items in the cart');
-  }
-  else{
-    cartQuantity-=3;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-  }
+  Remove(3);
   ">
     -3
   </button>
   <button onclick="
-  cartQuantity=0;
-  console.log('Cart was reset')
-  console.log(`Cart Quantity: ${cartQuantity}`);
+  Reset();
   ">
     Reset Cart
   </button>
 
   <script>
     let cartQuantity = 0;
-    //camelCase covention
-    //most commonly used in javascript for naming variables
     let maxCartQuantity = 10;
+    function Add(num){
+      if((cartQuantity + num) > maxCartQuantity)
+      {
+        alert('EXCEEDS CART MAX QUANTITY (10)');
+      }
+      else{
+        cartQuantity += num;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    }
+
+    function Remove(num){
+      if((cartQuantity - num) < 0)
+      {
+        alert('Not enough items in the cart');
+      }
+      else{
+        cartQuantity -= num;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    }
+
+    function Reset(){
+      cartQuantity=0;
+      console.log('Cart was reset')
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    }
+
+    function Show(){
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    }
+
   </script>
 </body>
 </html>
