@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    //objects let us group and use multiple related values together
+
+    //object
+    const product = {
+      //properties
+      name:'socks',
+      price:1000 //property-value pair
+    };
+
+    //checking type 
+    console.log(typeof product);
+
+    //accessing properties
+    console.log(product.name);
+    console.log(product.price);
+
+    //changing value of property
+    product.name = 'shoes';
+    console.log(product.name);
+
+    //adding a new property
+    product.quantity = 100;
+    console.log(product);
+
+    //deleting a property
+    delete product.quantity;
+    console.log(product);
+
+  </script>
+</body>
+</html>
