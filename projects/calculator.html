@@ -7,102 +7,97 @@
   <p>CALCULATOR</p>
   <p>
     <button onclick="
-      calculation += '1';
-      console.log(calculation);
+    stringGeneration('1');
       ">1
       </button>
     <button onclick="
-      calculation += '2';
-      console.log(calculation);
+      stringGeneration('2');
       ">2
       </button>
     <button onclick="
-      calculation += '3';
-      console.log(calculation);
+      stringGeneration('3');
       ">3
       </button>
     <button onclick="
-      calculation += '+';
-      console.log(calculation);
+      stringGeneration('+');
       ">+
       </button>
   </p>
   <p>
     <button onclick="
-      calculation += '4';
-      console.log(calculation);
+      stringGeneration('4');
       ">4
       </button>
     <button onclick="
-      calculation += '5';
-      console.log(calculation);
+      stringGeneration('5');
       ">5
       </button>
     <button onclick="
-      calculation += '6';
-      console.log(calculation);
+      stringGeneration('6');
       ">6
       </button>
     <button onclick="
-      calculation += '-';
-      console.log(calculation);
+      stringGeneration('-');
       ">-
       </button>
   </p>
   <p>
     <button onclick="
-      calculation += '7';
-      console.log(calculation);
+      stringGeneration('7');
       ">7
       </button>
     <button onclick="
-      calculation += '8';
-      console.log(calculation);
+      stringGeneration('8');
       ">8
       </button>
     <button onclick="
-      calculation += '9';
-      console.log(calculation);
+      stringGeneration('9');
       ">9
       </button>
     <button onclick="
-      calculation += '*';
-      console.log(calculation);
+      stringGeneration('*');
       ">*
       </button>
   </p>
   <p>
     <button onclick="
-      calculation += '0';
-      console.log(calculation);
+      stringGeneration('0');
       ">0
       </button>
     <button onclick="
-      calculation += '.';
-      console.log(calculation);
+      stringGeneration('.');
       ">.
       </button>
     <button onclick="
-      calculation = eval(calculation);
-      console.log(calculation);
+      calculate();
       ">=
       </button>
     <button onclick="
-      calculation += '/';
-      console.log(calculation);
+      stringGeneration('/');
       ">/
       </button>
   </p>
   <p>
     <button onclick="
-      calculation='';
-      console.log('Cleared');
+    clearString();
       ">Clear
       </button>
   </p>
 
   <script>
-    let calculation='';
+    let calculation=''; //global
+    function stringGeneration(val){
+      calculation += val;
+      console.log(calculation);
+    }
+    function calculate(){
+      calculation = eval(calculation);
+      console.log(calculation);
+    }
+    function clearString(){
+      calculation='';
+      console.log('Cleared');
+    }
   </script>
 </body>
 </html>
