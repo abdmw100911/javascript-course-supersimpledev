@@ -37,6 +37,8 @@
     const var1=undefined;
     console.log(var1);*/
 
+
+    /*
     //shortcut for if statements 
 
     //guard operator shortcut
@@ -51,8 +53,7 @@
 
     //iternary operator shortcut
 
-    //full code
-    /*
+    //full code 
     let result;
 
     if(condition){
@@ -61,10 +62,20 @@
     else{
     result='false condition executed'
     }
-    */
+    
     //shortcut code
     let result = false ? 'true condition executed': 'false condition executed';
-    console.log(result);
+    console.log(result);*/
+
+    //default operator
+
+    let currency= 'EUROS' || 'DOLLAR';
+    console.log(currency);
+    //this will print the first truthy value
+
+    currency = undefined || 'RUPEE';
+    console.log(currency);
+    //this will print rupee(the true value)
   </script>
 </body>
 </html>
