@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CALCULATOR</title>
+</head>
+<body>
+  <p>CALCULATOR</p>
+  <p>
+    <button onclick="
+    stringGeneration('1');
+      ">1
+      </button>
+    <button onclick="
+      stringGeneration('2');
+      ">2
+      </button>
+    <button onclick="
+      stringGeneration('3');
+      ">3
+      </button>
+    <button onclick="
+      stringGeneration('+');
+      ">+
+      </button>
+  </p>
+  <p>
+    <button onclick="
+      stringGeneration('4');
+      ">4
+      </button>
+    <button onclick="
+      stringGeneration('5');
+      ">5
+      </button>
+    <button onclick="
+      stringGeneration('6');
+      ">6
+      </button>
+    <button onclick="
+      stringGeneration('-');
+      ">-
+      </button>
+  </p>
+  <p>
+    <button onclick="
+      stringGeneration('7');
+      ">7
+      </button>
+    <button onclick="
+      stringGeneration('8');
+      ">8
+      </button>
+    <button onclick="
+      stringGeneration('9');
+      ">9
+      </button>
+    <button onclick="
+      stringGeneration('*');
+      ">*
+      </button>
+  </p>
+  <p>
+    <button onclick="
+      stringGeneration('0');
+      ">0
+      </button>
+    <button onclick="
+      stringGeneration('.');
+      ">.
+      </button>
+    <button onclick="
+      calculate();
+      ">=
+      </button>
+    <button onclick="
+      stringGeneration('/');
+      ">/
+      </button>
+  </p>
+  <p>
+    <button onclick="
+    clearString();
+      ">Clear
+      </button>
+  </p>
+
+  <script>
+    let calculation=localStorage.getItem('calculation') || ''; //global
+    function stringGeneration(val){
+      calculation += val;
+      localStorage.setItem('calculation',calculation);
+      console.log(calculation);
+    }
+    function calculate(){
+      calculation = eval(calculation);
+      localStorage.setItem('calculation',calculation);
+      console.log(calculation);
+    }
+    function clearString(){
+      calculation='';
+      localStorage.removeItem('calculation');
+      console.log('Cleared');
+    }
+  </script>
+</body>
+</html>
