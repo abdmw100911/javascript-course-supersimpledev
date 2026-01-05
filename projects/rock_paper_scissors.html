@@ -25,6 +25,15 @@
       Scissor
   </button>
 
+  <p class="js-result-display">
+  </p>
+
+  <p class = "js-choice-display">
+  </p>
+
+  <p class = "js-score-display">
+  </p>
+
   <button onclick="
   resetScore();
   "> 
@@ -32,24 +41,15 @@
   </button>
   <script>
 
-    //fetching updated score from localStorage
-    //assigning localStorage data to score , if localStorage === null(falsy), assign origin score object
-    //used default operator shortcut 
+    //retrieve score from local storage
     let score = JSON.parse(localStorage.getItem('score')) || {
         wins:0,
         losses:0,
         ties:0
       };
 
-    //turned this into shortcut above(the first line)
-    /*
-    if(!score){
-      score = {
-        wins:0,
-        losses:0,
-        ties:0
-      };
-    }*/
+    //display initial score  
+    displayScoreElement();
 
     //function for resetting score
     function resetScore(){
@@ -60,11 +60,11 @@
       //deleting data from local storage
       localStorage.removeItem('score');
 
-    alert(`Score Reset
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      //display score after reset
+      displayScoreElement();
     }
 
-
+    
     function playGame(userMove){
 
       //computer picks move
@@ -83,6 +83,9 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         else if(randomNumber>=2/3 && randomNumber<1){
           computerMove='Scissor'
         }
+
+        //display user and computermove
+        displayChoiceElement(userMove,computerMove);
 
         return computerMove;
       }
@@ -125,6 +128,9 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
         }
       }
 
+      //display result
+      displayResultElement(result);
+
       //update score
       if(result === 'You Win'){
         score.wins += 1;
@@ -139,11 +145,26 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       //storing updated score in local storage
       localStorage.setItem('score',JSON.stringify(score));
 
-      alert(`You Picked ${userMove}, Computer picked ${computerMove}, ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
-
+      //display the updated score
+      displayScoreElement();
         }
 
+    //function to display score
+    function displayScoreElement(){
+      document.querySelector('.js-score-display').
+        innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`
+    }
+
+    //function to display result
+    function displayResultElement(result){
+      document.querySelector('.js-result-display').innerHTML = result;
+    }
+
+    //function to display userchoice
+    function displayChoiceElement(userMove, computerMove){
+      document.querySelector('.js-choice-display')
+        .innerHTML = `You : ${userMove}, Computer : ${computerMove}`;
+    }
   </script>
 </body>
 </html>
