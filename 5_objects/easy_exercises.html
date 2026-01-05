@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easy Exercises</title>
+</head>
+<body>
+  <script>
+    //5a
+    const basketballProduct = {
+      name:'BasketBall',
+      price: 2095
+    };
+    console.log(basketballProduct);
+
+    //5b
+    basketballProduct.price += 500;
+
+    console.log(basketballProduct);
+
+    //5c
+    basketballProduct['delivery-time'] = '3 Days';
+    console.log(basketballProduct);
+
+    //5d
+    const product1 = {
+      name:'GKI OFFENSIVE XX',
+      price:1000
+    };
+
+    const product2 = {
+      name:'butterfly donic',
+      price:10000
+    };
+    function comparePrice(product1,product2){
+      if(product1.price < product2.price){
+        return product1;
+      }
+      else{
+        return product2;
+      }
+    }
+    const result = comparePrice(product1,product2);
+    console.log(`${result.name} is the cheaper product`);
+
+    //5e
+    const product3 = {
+      name1:'shirt',
+      price1:499
+    };
+    const product4 = {
+      name2:'SHIRT',
+      price2:499
+    };
+      
+    function isSameProduct(product3, product4){
+      const {name1,price1} = product3;
+      const {name2,price2} = product4;
+      if(name1.toUpperCase() === name2.toUpperCase() && price1 === price2){
+        return 'Are Same';
+      }
+      else{
+        return 'Are not Same';
+      }
+    }
+    console.log(`both products ${isSameProduct(product3,product4)}`);
+
+    //8f
+    console.log('GOOD MORNING'.toLowerCase());
+    
+    //8g
+    console.log('hello'.repeat(5));
+
+  </script>
+</body>
+</html>
