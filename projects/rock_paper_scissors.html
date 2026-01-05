@@ -41,6 +41,16 @@
         ties:0
       };
 
+    //turned this into shortcut above(the first line)
+    /*
+    if(!score){
+      score = {
+        wins:0,
+        losses:0,
+        ties:0
+      };
+    }*/
+
     //function for resetting score
     function resetScore(){
       score.wins = 0;
@@ -54,15 +64,6 @@
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
 
-    //turned this into shortcut above(the first line)
-    /*
-    if(!score){
-      score = {
-        wins:0,
-        losses:0,
-        ties:0
-      };
-    }*/
 
     function playGame(userMove){
 
