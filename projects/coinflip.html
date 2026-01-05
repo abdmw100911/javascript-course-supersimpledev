@@ -8,55 +8,62 @@
     COIN FLIP GAME
   </p>
   <button onclick="
-  coin=Math.random();
-  flipResult='';
-  if(coin > 0 && coin <= 1/2){
-      flipResult='Heads'
-    }
-    else if(coin > 1/2 && coin <= 1 ){
-      flipResult='Tails';
-    }
-
-    result='';
-    guess='Heads';
-    if(guess === flipResult){
-      result='You Win';
-    }
-    else{
-      result='You Lose';
-    }
-
-    alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}`);
+  playGame('Heads');
   ">
     Heads</button>
 
   <button onclick="
-  coin=Math.random();
-  flipResult='';
-  if(coin > 0 && coin <= 1/2){
-      flipResult='Heads'
-    }
-    else if(coin > 1/2 && coin <= 1 ){
-      flipResult='Tails';
-    }
-
-    result='';
-    guess='Tails';
-    if(guess === flipResult){
-      result='You Win';
-    }
-    else{
-      result='You Lose';
-    }
-
-    alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}`);
+  playGame('Tails');
   ">
     Tails</button>
 
+  <button onclick="
+  resetScore();
+  ">
+    Reset Score
+  </button>
+
   <script>
-    let flipResult='';
-    let result='';
-    let guess=''
+    //score system
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins:0,
+      losses:0
+    };
+    function playGame(guess){
+      let coin=Math.random();
+      let flipResult='';
+      if(coin < 0.5){
+          flipResult='Heads'
+        }
+        else{
+          flipResult='Tails';
+        }
+
+      let result='';
+        if(guess === flipResult){
+          result='You Win';
+        }
+        else{
+          result='You Lose';
+        }
+      
+        if(result === 'You Win'){
+          score.wins ++;
+        }
+        else{
+          score.losses++;
+        }
+        localStorage.setItem('score', JSON.stringify(score));
+        alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}
+Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+
+    function resetScore(){
+      score.wins = 0;
+      score.losses = 0;
+      localStorage.removeItem('score');
+      alert('Score Reset');
+    }
   </script>
 </body>
 </html>
