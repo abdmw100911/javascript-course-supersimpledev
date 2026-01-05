@@ -25,11 +25,16 @@
 
   <script>
     //score system
+    //retrive score from local storage
     let score = JSON.parse(localStorage.getItem('score')) || {
       wins:0,
       losses:0
     };
+
+    //game start and result decision
     function playGame(guess){
+
+      //coin flip result generation
       let coin=Math.random();
       let flipResult='';
       if(coin < 0.5){
@@ -39,6 +44,7 @@
           flipResult='Tails';
         }
 
+      //result based on userguess
       let result='';
         if(guess === flipResult){
           result='You Win';
@@ -46,18 +52,24 @@
         else{
           result='You Lose';
         }
-      
+
+      //score update
         if(result === 'You Win'){
           score.wins ++;
         }
         else{
           score.losses++;
         }
+
+        //store score in local storage
         localStorage.setItem('score', JSON.stringify(score));
+
+        //alert msg
         alert(`Coin Flip result: ${flipResult}, Your choice: ${guess}, ${result}
 Wins: ${score.wins}, Losses: ${score.losses}`);
     }
 
+    //score reset
     function resetScore(){
       score.wins = 0;
       score.losses = 0;
