@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOCUMENT OBJECT MODEL</title>
+</head>
+<body>
+
+  <button>
+    hello
+  </button>
+  <br>
+  <br>
+
+  <!--common practice to name class starting with 'js', to indicate that it is being used in javascript-->
+  <button class = "js-button-2">
+    hello world, whats up!!!
+  </button>
+
+  <script>
+    //document object model: is a built in object that is linked to the webpage
+
+    
+    document.body.innerHTML = ('body changed using DOM');
+    //this replaces anything on the webpage with 'hello'
+
+    document.title = ('title changed using DOM');
+    //this changes the title of the webpage
+    
+
+    
+    //PROPERTIES AND METHODS OF DOM
+    //PROPERTIES OF DOM
+
+    console.log(document.title);
+    //outputs the title of the webpage
+
+    console.log(document.body);
+    //outputs the entire body element
+    //thus html element is inside a javascript code
+
+    //when html element is inside javascript code , it is stored as a object
+    console.log(typeof document.body);
+    //output will be object
+
+    console.log(document.body.innerHTML);
+    //this will output all the html code inside the body
+    //document.body.innerHTML gives control over 'all html code inside the body'
+
+    document.body.innerHTML = 'changed the html';
+    //this will change all the html code inside the body with the text 'changed the html'
+
+    //we can change the html to other things as well
+    document.body.innerHTML = "<button>INSERTED BUTTON USING innerHTML property</button>"
+    
+
+    //METHODS OF DOM
+
+    console.log(document.querySelector('button'))
+    //this selects the first button in the html code and puts it inside javascript
+
+    //every html element has 'innerHTML' property
+    //this can be accessed and changed
+    console.log(document.querySelector('button').innerHTML);
+    //this will print 'hello', which is the html inside button
+
+    document.querySelector('button')
+      .innerHTML = 'changed html inside button using querySelector.innerHTML';
+
+    //accessing elements using class
+    console.log(document.querySelector('.js-button-2').
+      innerHTML);
+
+    //this element is now an object, and objects are values that can be stored inside variables
+
+    const buttonElement = document.querySelector('.js-button-2').innerHTML;
+    console.log(buttonElement);
+
+    
+  </script>
+</body>
+</html>
