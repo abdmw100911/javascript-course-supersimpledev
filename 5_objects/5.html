@@ -117,7 +117,8 @@
     console.log(javascrobj);
     console.log(typeof javascrobj);
     */
-   
+
+    /*
     //localStorage - built in object
     //more permanent storage than variable 
     //stores value even after page is refreshed
@@ -129,6 +130,99 @@
     //localStorage.getItem('text used to 'get' the stored data');
     //used to access the stored data
     console.log(localStorage.getItem('msg'));
+    */
+
+    /*
+    //AUTO BOXING : javascript automatically wraps strings, numbers, boolean into a special object and thus allows them to have properties and methods just like normal objects 
+
+    console.log('hello0'.length); //string property
+    console.log('hello world'.toUpperCase()); //string method
+    console.log('HELLO'.toLowerCase());
+    */
+
+    /*
+    //OBJECTS ARE REFERENCES
+
+    const object1 = {
+      message : 'hello'
+    };
+    //here 'object1' doesnt store 'message:"hello"', instead it stores a reference to the object 
+
+    const object2 = object1;
+    //here the reference is assigned to object2 
+    //now both object1 and object2 point to the same object
+
+    object1.message = 'Hello World';
+    console.log(object1);
+    //even though object1 was defined with const(value cant be reassgined), we were able to change the value of the property, this is because 'object1' just contains the reference(pointer) to the property, we are not changing the pointer , instead the property it points to 
+
+    console.log(object2);
+    //since 'object2' points to the same object as 'object1' we get the same output
+
+    object3 = {
+      message:'Hello World'
+    };
+
+    console.log(object1 === object3)
+    //false: beacuse here 2 different references to objects are compared 
+    //both point to different objects
+    
+    console.log(object1 === object2)
+    //true:because both point to the same object 
+
+    */
+
+    //OBJECT SHORTCUT 
+    //ASSIGNING PROPERTY VALUE TO A VARIABLE(WHICH HAS SAME NAME AS PROPERTY)
+
+    const object4 = {
+      message:'hello world',
+      price:499,
+      age:29
+    };
+
+    //traditional way
+    //const message = object4.message;
+    //const price = object4.price;
+    //const age = object4.age;
+
+
+    //shorcut
+    const {message, price, age} = object4;
+    //this takes out the property from object and stores it in a variable named same as the object
+
+    console.log(message);
+    console.log(price);
+    console.log(age);
+
+    //SHORTCUT 2 : SHORTHAND PROPERTY
+
+    const object5 = {
+      //message : message
+      message 
+    };
+    console.log(object5);
+    
+
+    //SHORTCUT 3 : SHORTHAND METHOD
+
+    const object6 = {
+      //tradtional
+      method : function f1(){
+        console.log('this is a method');
+      },
+
+      //shortcut
+      method1(){
+        console.log('this is also a method but in shortcut');
+      }
+    };
+    object6.method();
+    object6.method1();
+
+
+
+
 
   </script>
 </body>
