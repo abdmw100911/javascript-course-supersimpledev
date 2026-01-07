@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      AMAZON SHIPPING CALCULATOR
+    </title>
+  </head>
+  <body>
+
+    <p>
+      Amazon Shipping Calculator
+    </p>
+
+    <p>
+      Orders under $40 = +$10 shipping
+    </p>
+
+    <p>
+      Orders over $40 = FREE shipping
+    </p>
+
+    <input type="text" placeholder="Cost of Order" class = "js-input" 
+    onkeydown="
+    handleKeydown(event);
+    ">
+
+    <button onclick="
+    calculate();
+    ">
+      Calculate
+    </button>
+
+    <p class = "js-result-display"></p>
+
+    <script>
+
+      function calculate(){
+        const inputElement = document.querySelector('.js-input');
+        //converting to cents , to avoid float errors
+        let inputCost = Math.round(Number(inputElement.value) * 100);
+        
+        //comparing as cents
+        if(inputCost < 4000){
+          inputCost += 1000
+          //passing to display as dollars
+           displayResultElement(inputCost / 100);
+           
+        }
+        else{
+          //passing to display as dollars
+          displayResultElement(inputCost / 100);
+        }
+      }
+
+      function displayResultElement(result){
+        document.querySelector('.js-result-display').innerHTML = `$ ${result}`;
+      }
+
+      function handleKeydown(event){
+        //output when 'Enter' is pressed
+        if(event.key === 'Enter')
+        calculate();
+      }
+    </script>
+  </body>
+</html>
