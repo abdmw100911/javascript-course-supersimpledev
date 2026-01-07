@@ -6,7 +6,7 @@
 </head>
 <body>
   <script>
-    /*
+    
     //objects let us group and use multiple related values together
 
     //object
@@ -35,9 +35,9 @@
     delete product.quantity;
     console.log(product);
 
-    */
+    
 
-    /*
+    
 
     //bracket notation -> to define and access propery in objects
     const product2 = {
@@ -53,9 +53,9 @@
     console.log(product2['delivery-time']);
     console.log(product2['name']);
 
-    */
+    
 
-    /*
+    
     //nested object
     const product3 = {
       'name':'socks',
@@ -67,9 +67,9 @@
 
     console.log(product3.rating.stars);
     console.log(product3['rating']['stars'])
-    */
+    
 
-    /*
+    
     //function inside object ->this is called a method
     const product4 = {
       func: function f1(){
@@ -84,9 +84,9 @@
     console.log(typeof console.log)//function
     console.log(typeof product4.func);//function
     console.log(typeof product4);
-    */
+    
 
-    /*
+    
     //Built in objects -> JSON OBJECT
     //a json object is similar to javascript objects but has less features,it doesnot store functions inside it like javascript object
     //json object is used to transfer data and store data between computers, thus it is more universal
@@ -116,9 +116,9 @@
     javascrobj = JSON.parse(jsonobj);
     console.log(javascrobj);
     console.log(typeof javascrobj);
-    */
+    
 
-    /*
+    
     //localStorage - built in object
     //more permanent storage than variable 
     //stores value even after page is refreshed
@@ -130,17 +130,17 @@
     //localStorage.getItem('text used to 'get' the stored data');
     //used to access the stored data
     console.log(localStorage.getItem('msg'));
-    */
+    
 
-    /*
+    
     //AUTO BOXING : javascript automatically wraps strings, numbers, boolean into a special object and thus allows them to have properties and methods just like normal objects 
 
     console.log('hello0'.length); //string property
     console.log('hello world'.toUpperCase()); //string method
     console.log('HELLO'.toLowerCase());
-    */
+    
 
-    /*
+    
     //OBJECTS ARE REFERENCES
 
     const object1 = {
@@ -170,9 +170,9 @@
     console.log(object1 === object2)
     //true:because both point to the same object 
 
-    */
+    
 
-    /*
+    
     //OBJECT SHORTCUT 
     //ASSIGNING PROPERTY VALUE TO A VARIABLE(WHICH HAS SAME NAME AS PROPERTY)
 
@@ -220,8 +220,6 @@
     };
     object6.method();
     object6.method1();
-
-    */
 
     //WINDOW BUILT IN OBJECT
     //IT ACCESSES EVERYTHING ON THE BROWER WINDOW , LIKE THE DOCUMENT, THE CONSOLE, THE POPUP
