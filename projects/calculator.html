@@ -85,17 +85,24 @@
   </p>
 
   <script>
-    let calculation=''; //global
+    let calculation=localStorage.getItem('calculation') || ''; //global
+    
     function stringGeneration(val){
       calculation += val;
+      //update localstorage
+      localStorage.setItem('calculation',calculation);
       console.log(calculation);
     }
     function calculate(){
       calculation = eval(calculation);
+      //update localstorage
+      localStorage.setItem('calculation',calculation);
       console.log(calculation);
     }
     function clearString(){
       calculation='';
+      //empty the local storage
+      localStorage.removeItem('calculation');
       console.log('Cleared');
     }
   </script>
