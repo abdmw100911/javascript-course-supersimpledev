@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      ONKEY UP
+    </title>
+  </head>
+  <body>
+    <input type="text" placeholder="Type something" onkeyup="
+    keyhandler(event)
+      ">
+    <p class = "js-display"></p>
+  </body>
+  <script>
+    let word = '';
+    function keyhandler(event){
+      if(event.key === 'Backspace'){
+        //slice(startIndex, endIndex)
+        //0:start index , -1:endindex
+        //endIndex is excluded
+        word = word.slice(0,-1);
+      }
+      else{
+        word += event.key;
+      }
+      document.querySelector('.js-display').innerHTML = `${word}`;
+    }
+  </script>
+</html>
