@@ -74,7 +74,9 @@
   </button>
 
   <script>
-    let cartQuantity = 0;
+    //localStorage.getItem('cart') -> gives a string , so we convert it to a number for required calculations and comparisons
+     
+    let cartQuantity = Number(localStorage.getItem('cart')) || 0;
     let maxCartQuantity = 10;
     function Add(num){
       if((cartQuantity + num) > maxCartQuantity)
@@ -83,6 +85,8 @@
       }
       else{
         cartQuantity += num;
+        //update local storage
+        localStorage.setItem('cart',JSON.stringify(cartQuantity))
         console.log(`Cart Quantity: ${cartQuantity}`);
       }
     }
@@ -94,12 +98,16 @@
       }
       else{
         cartQuantity -= num;
+        //update local storage
+        localStorage.setItem('cart',JSON.stringify(cartQuantity))
         console.log(`Cart Quantity: ${cartQuantity}`);
       }
     }
 
     function Reset(){
       cartQuantity=0;
+      //empty the local storage
+      localStorage.removeItem('cart');
       console.log('Cart was reset')
       console.log(`Cart Quantity: ${cartQuantity}`);
     }
