@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOCUMENT OBJECT MODEL PROJECTS</title>
+    <style>
+      .subscribe-button{
+        background-color:black;
+        color:white;
+        border:none;
+        padding-left:15px;
+        padding-right:15px;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-weight: bold;
+        border-radius:50px; 
+      }
+      .subscribe-button:hover{
+        cursor:pointer;
+      }
+      .is-subscribed{
+        background-color:rgb(240, 240, 240);
+        color:black;
+      }
+      p{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Youtube Subscribe Button
+    </p>
+    <button class = "js-subscribe-button subscribe-button" onclick = "
+    changeSubscribe();
+    ">
+    Subscribe
+    </button>
+
+    <script>
+      function changeSubscribe(){
+        subscribeButtonElement = document.querySelector('.js-subscribe-button');
+
+        if(subscribeButtonElement.innerText === 'Subscribe'){
+          subscribeButtonElement.innerText= 'Subscribed';
+          //when button is changed, we will add a new class to the button element and to add extra styles
+          subscribeButtonElement.classList.add('is-subscribed')
+        }
+        else{
+          subscribeButtonElement.innerText = 'Subscribe';
+          //remove the new class , to remove the extra styles and restore og style
+          subscribeButtonElement.classList.remove('is-subscribed')
+        }  
+      }
+    </script>
+  </body>
+</html>
