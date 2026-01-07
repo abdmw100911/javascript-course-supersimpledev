@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM EASY EXERCISES
+    </title>
+    <body>
+      <button>
+        6a
+      </button>
+
+      <button class = "js-6b">
+        6b
+      </button>
+
+      <!--6c-->
+      <br><br>
+      <button onclick="
+      displayChoiceElement('Heads');
+      ">
+        Heads
+      </button>
+      <button onclick="
+      displayChoiceElement('Tails');
+      ">
+        Tails
+      </button>
+      <p class = "js-choice">
+      </p>
+
+      <!--6d and 6e and 6f-->
+      <input type="text" placeholder="Name" class="js-inputName"
+      onkeydown="
+      handleKeydown(event);
+      "
+      >
+
+      <button onclick="
+      displayName();
+      ">
+        Submit
+      </button>
+
+      <p class = "js-displayName">
+      </p>
+
+
+      <script>
+        //6a
+        console.log(document.querySelector('button'));
+
+        //6b
+        document.querySelector('.js-6b').innerHTML = '6b done';
+
+        //6c
+        function displayChoiceElement(choice){
+          document.querySelector('.js-choice').innerHTML = `You Chose ${choice}`;
+        }
+
+        //6d,6e,6f
+        function displayName(){
+          const inputElemet = document.querySelector('.js-inputName');
+          const name = inputElemet.value;
+          const displayElement = document.querySelector('.js-displayName')
+          displayElement.innerHTML = `Your name is ${name}`;
+        }
+
+        function handleKeydown(event){
+          if(event.key === 'Enter'){
+            displayName();
+          }
+        }
+      </script>
+    </body>
+  </head>
+</html>
