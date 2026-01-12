@@ -1,0 +1,42 @@
+body{
+  background-color: black;
+  height: 100vh;
+  color:white;
+  font-family: Arial;
+  font-size:40px;
+}
+button{
+  font-size: 25px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  background-color: rgb(51, 51, 51);
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 60px;
+  transition: opacity 0.15s;
+}
+button:hover{
+  opacity: 0.8;
+}
+button:active{
+  opacity:1;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  width: fit-content;
+}
+.operation-button{
+  background-color: rgb(254, 160, 10);;
+}
+.clear-button{
+  font-size:20px;
+  background-color: rgb(150, 30, 30);
+  color: white;
+}
+.calculation{
+  font-size: 40px;
+  margin-bottom: 20px;
+}

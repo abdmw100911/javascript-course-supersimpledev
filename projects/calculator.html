@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>CALCULATOR</title>
+    <link rel="stylesheet" href="styles/calculator.css">
 </head>
 <body>
-  <p>CALCULATOR</p>
-  <p class = "js-calculation"></p>
-  <p>
+  <p class = "js-calculation calculation"></p>
+  <div class="buttons">
     <button onclick="
     stringGeneration('1');
       ">1
@@ -21,11 +21,10 @@
       </button>
     <button onclick="
       stringGeneration('+');
-      ">+
+      " class="operation-button">+
       </button>
-  </p>
-  <p>
-    <button onclick="
+      
+      <button onclick="
       stringGeneration('4');
       ">4
       </button>
@@ -39,11 +38,10 @@
       </button>
     <button onclick="
       stringGeneration('-');
-      ">-
-      </button>
-  </p>
-  <p>
-    <button onclick="
+      " class="operation-button">-
+    </button>
+
+      <button onclick="
       stringGeneration('7');
       ">7
       </button>
@@ -57,10 +55,9 @@
       </button>
     <button onclick="
       stringGeneration('*');
-      ">*
-      </button>
-  </p>
-  <p>
+      " class="operation-button">X
+    </button>
+
     <button onclick="
       stringGeneration('0');
       ">0
@@ -71,47 +68,21 @@
       </button>
     <button onclick="
       calculate();
-      ">=
+      " class="operation-button">=
       </button>
     <button onclick="
       stringGeneration('/');
-      ">/
-      </button>
-  </p>
-  <p>
+      " class="operation-button">/
+    </button>
+
     <button onclick="
     clearString();
-      ">Clear
+      " class="clear-button">Clear
       </button>
-  </p>
+  </div>
 
-  <script>
-    let calculation=localStorage.getItem('calculation') || ''; //global
-
-    //initial display after page first loads
-    displayCalculation()
-
-    function stringGeneration(val){
-      calculation += val;
-      //update localstorage
-      localStorage.setItem('calculation',calculation);
-      displayCalculation()
-    }
-    function calculate(){
-      calculation = eval(calculation);
-      //update localstorage
-      localStorage.setItem('calculation',calculation);
-      displayCalculation()
-    }
-    function clearString(){
-      calculation='';
-      //empty the local storage
-      localStorage.removeItem('calculation');
-      displayCalculation()
-    }
-    function displayCalculation(){
-      document.querySelector('.js-calculation').innerHTML = `${calculation}`;
-    }
+  <script src="scripts/calculator.js">
+  
   </script>
 </body>
 </html>
