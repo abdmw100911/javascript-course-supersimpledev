@@ -9,6 +9,7 @@
       border:none;
       border-radius:20px;
       display: block;
+      cursor:pointer;
     }
     .uber-button1{
       background-color: black;
@@ -28,18 +29,91 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .change-button{
+      background-color: rgb(230,230,230);
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .change-button-toggled{
+      background-color: black;
+      color: rgb(230,230,230);
+    }
   </style>
 </head>
 <body>
   <button class="amazon-button">
     Add to Cart
   </button>
+
   <br>
+
   <button class="uber-button1">
     Request Now
   </button>
   <button class="uber-button2">
     Schedule for Later
   </button>
+
+  <br><br>
+
+  <button class="js-button" onclick="test()">Test</button>
+
+  <br><br>
+
+  <button class="change-button js-gaming-button" onclick="changeGamingButton()">
+    Gaming
+  </button>
+
+  <button class="change-button js-music-button" onclick="changeMusicButton()">
+    Music
+  </button>
+
+  <button class="change-button js-tech-button" onclick="changeTechButton()">
+    Tech
+  </button>
+
+  <script>
+    function test(){
+    console.log(document.querySelector('.js-button').classList.contains('js-button'))
+    }
+
+    function changeGamingButton(){
+      const gamingButtonElem = document.querySelector('.js-gaming-button');
+
+      if(gamingButtonElem.classList.contains('change-button-toggled')){
+        gamingButtonElem.classList.remove('change-button-toggled')
+      }
+      else{
+        gamingButtonElem.classList.add('change-button-toggled');
+      }
+    }
+
+    function changeMusicButton(){
+      const musicButtonElem = document.querySelector('.js-music-button');
+
+      if(musicButtonElem.classList.contains('change-button-toggled')){
+        musicButtonElem.classList.remove('change-button-toggled')
+      }
+      else{
+        musicButtonElem.classList.add('change-button-toggled');
+      }
+    }
+
+    function changeTechButton(){
+      const techButtonElem = document.querySelector('.js-tech-button');
+
+      if(techButtonElem.classList.contains('change-button-toggled')){
+        techButtonElem.classList.remove('change-button-toggled')
+      }
+      else{
+        techButtonElem.classList.add('change-button-toggled');
+      }
+    }
+      
+    
+  </script>
 </body>
 </html>
