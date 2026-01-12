@@ -4,7 +4,7 @@
     <title>CALCULATOR</title>
     <link rel="stylesheet" href="styles/calculator.css">
 </head>
-<body>
+<body onkeydown="handleKey(event);">
   <p class = "js-calculation calculation"></p>
   <div class="buttons">
     <button onclick="
@@ -60,7 +60,8 @@
 
     <button onclick="
       stringGeneration('0');
-      ">0
+      "
+      >0
       </button>
     <button onclick="
       stringGeneration('.');

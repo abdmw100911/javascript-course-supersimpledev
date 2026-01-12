@@ -24,3 +24,25 @@ let calculation=localStorage.getItem('calculation') || ''; //global
     function displayCalculation(){
       document.querySelector('.js-calculation').innerHTML = `${calculation}`;
     }
+
+    //key functionality
+    function handleKey(event){
+      if(event.key === 'Enter'){
+        calculate();
+      }
+      else if(event.key === 'Delete'){
+        clearString();
+      }
+      else if(event.key === 'Backspace'){
+        calculation = calculation.slice(0,-1);
+        displayCalculation();
+      }
+      else if((event.key >= '0' && event.key <= '9') ||
+              event.key === '.' ||
+              event.key === '+' ||
+              event.key === '-' ||
+              event.key === '*' ||
+              event.key === '/'){
+        stringGeneration(event.key);
+      }
+    }
