@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML CSS EASY EXERCISES</title>
+  <style>
+    .change-button{
+      background-color: rgb(230,230,230);
+      padding:10px 20px;
+      border:none;
+      border-radius:5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .change-button-toggled{
+      background-color: black;
+      color: rgb(230,230,230);
+    }
+  </style>
+</head>
+<body>
+  <button class="change-button js-gaming-button" onclick="changeGamingButton()">
+    Gaming
+  </button>
+
+  <button class="change-button js-music-button" onclick="changeMusicButton()">
+    Music
+  </button>
+
+  <button class="change-button js-tech-button" onclick="changeTechButton()">
+    Tech
+  </button>
+
+  <script>
+    const techButtonElem = document.querySelector('.js-tech-button');
+    const musicButtonElem = document.querySelector('.js-music-button');
+    const gamingButtonElem = document.querySelector('.js-gaming-button');
+
+
+    function changeGamingButton(){
+      if(gamingButtonElem.classList.contains('change-button-toggled')){
+        gamingButtonElem.classList.remove('change-button-toggled');
+        
+      }
+      else{
+        if(techButtonElem.classList.contains('change-button-toggled')){
+          techButtonElem.classList.remove('change-button-toggled');
+        }
+        else if(musicButtonElem.classList.contains('change-button-toggled')){
+          musicButtonElem.classList.remove('change-button-toggled');
+        }
+        gamingButtonElem.classList.add('change-button-toggled');
+        
+      }
+    }
+
+    function changeMusicButton(){
+
+      if(musicButtonElem.classList.contains('change-button-toggled')){
+        musicButtonElem.classList.remove('change-button-toggled')
+      }
+      else{
+        if(gamingButtonElem.classList.contains('change-button-toggled')){
+          gamingButtonElem.classList.remove('change-button-toggled');
+        }
+        else if(techButtonElem.classList.contains('change-button-toggled')){
+          techButtonElem.classList.remove('change-button-toggled');
+        }
+        musicButtonElem.classList.add('change-button-toggled');
+      }
+    }
+
+    function changeTechButton(){
+
+      if(techButtonElem.classList.contains('change-button-toggled')){
+        techButtonElem.classList.remove('change-button-toggled')
+      }
+      else{
+        if(gamingButtonElem.classList.contains('change-button-toggled')){
+          gamingButtonElem.classList.remove('change-button-toggled');
+        }
+        else if(musicButtonElem.classList.contains('change-button-toggled')){
+          musicButtonElem.classList.remove('change-button-toggled');
+        }
+        techButtonElem.classList.add('change-button-toggled');
+      }
+    }
+  </script>
+</body>
+</html>
