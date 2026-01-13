@@ -3,26 +3,62 @@ let todoList = [];
 displayTodo();
 
 function addTodo(){
-  const inputElem = document.querySelector('.js-input');
-  const todo = inputElem.value
-  todoList.push(todo);
+  //take name input
+  const nameElem = document.querySelector('.js-name-input');
+  const todoName = nameElem.value;
+
+  //take date input
+  const dueDateElem = document.querySelector('.js-date-input');
+  const dueDate = dueDateElem.value;
+
+  //create an object of name and duedate
+  const todoObject = {
+    //todoName:todoName,
+    //dueDate:dueDate
+    //shorthand syntax property
+    todoName,
+    dueDate
+  };
+
+  //push the object into the todoList array
+  todoList.push(todoObject);
 
   //make text box empty after entering todo 
-  inputElem.value = '';
+  nameElem.value = '';
 
+  //display the todoList after adding
   displayTodo();
 }
 
 
+
 function displayTodo(){
+
+  //reset the html inside div
   let todoListHtml = '';
+
+  //iterate through objects in the the todoList array
   for(let i=0;i<todoList.length;i++){
-    //storing each todo from list 
-    const todo = todoList[i];
+
+    //storing each todoObject from array 
+    const todoObject = todoList[i];
+
     //creating a paragraph element for each todo
     //this is called generating html throigh javascript
-    const html = `<p>${todo}</p>`;
-    //updating the todoListHtml which will contain all todo with p element
+    //displaying name and duedate from object
+    const html = `
+    <div>${todoObject.todoName}</div>
+
+    <div>${todoObject.dueDate}</div>
+
+    <button onclick="
+    todoList.splice(${i},1);
+    displayTodo();
+    " class = "done-button">Done
+    </button>
+
+    `;
+    //updating the todoListHtml which will contain all html content defined above
     todoListHtml += html;
   }
 
