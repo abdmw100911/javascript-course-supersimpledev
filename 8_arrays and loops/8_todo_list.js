@@ -1,5 +1,4 @@
 let todoList = [];
-
 displayTodo();
 
 function addTodo(){
@@ -22,9 +21,18 @@ function displayTodo(){
     const todo = todoList[i];
     //creating a paragraph element for each todo
     //this is called generating html throigh javascript
-    const html = `<p>${todo}</p>`;
+    const html = `
+    <p>
+    ${todo}
+    <button onclick="
+    todoList.splice(${i},1);
+    displayTodo();
+    ">Delete</button>
+    </p>
+    `;
     //updating the todoListHtml which will contain all todo with p element
     todoListHtml += html;
+    console.log(todoListHtml);
   }
 
   const displayElem = document.querySelector('.js-display');
