@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHALLENGE EXERCISE</title>
+</head>
+<body>
+  <script>
+    
+    //8l
+    //find the min and max number
+    const arr = [1];
+
+    function findMinMax(arr) {
+      let min = arr[0];
+      let max = arr[0];
+      if(arr.length===0){
+        return {min:null,max:null};
+      }
+      else if(arr.length === 1){
+        return {min:arr[0],max:arr[0]};
+      }
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min){
+          min = arr[i];
+        }
+        if (arr[i] > max){
+          max = arr[i];
+        }
+      }
+
+      return { min, max };
+    }
+
+    const result = findMinMax(arr);
+    console.log(`array:[${arr}], min:${result.min}, max:${result.max}`);
+    
+   
+    //count words
+    words = ['apple', 'mango', 'mango', 'grape','apple','grape'];
+    function countWords(words){
+      countOfWords = {};
+      for(let i=0;i<words.length;i++){
+        if (countOfWords[words[i]] === undefined) {
+          countOfWords[words[i]] = 1;
+        } 
+        else {
+          countOfWords[words[i]]++;
+        }
+        }
+         return countOfWords;
+      }
+    const res = countWords(words);
+    console.log(res);
+    
+
+    
+    //the famous fizz buzz problem 
+    //divisible by 3 - fizz
+    //divisible by 5 - buzz
+    //divisible by both - fizzbuzz
+
+    function fizzbuzz(){
+      for(let i=1;i<=20;i++){
+        if (i % 3 === 0 && i % 5 === 0){
+          console.log(i,': fizz buzz');
+          continue;
+        }
+        else if(i%3===0){
+          console.log(i,': fizz');
+          continue;
+        }
+        else if(i % 5 === 0){
+          console.log(i,': buzz');
+          continue;
+        }
+    
+        console.log(i);
+      }
+    }
+    fizzbuzz();
+    
+
+    
+    //using the find word function to return array with unique strings
+    const words = ['search','hello','apple','grape','apple','grape','hello'];
+    function findWord(words,word){
+      for(let i=0;i<words.length;i++){
+      if(words[i] === word){
+        return i;
+      }
+      }
+      return -1;
+    }
+    function unique(words){
+      //start and empty array
+      //this will contain the unique words
+      let result = [];
+
+      //iterate through the og array with duplicates
+      for(let i=0;i<words.length;i++){
+        //call the findword function to search for words[i] in result array
+        //if found we dont add words[i](duplicate)
+        //if not found we add words[i](unique)
+        if(findWord(result,words[i]) === -1){
+          result.push(words[i]);
+        }
+      }
+      return result;
+    }
+    console.log(`OG array: [${words}], UNIQUE array [${unique(words)}]`);
+  </script>
+</body>
+</html>

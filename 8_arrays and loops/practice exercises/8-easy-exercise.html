@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRACTICE EXERCISES</title>
+</head>
+<body>
+  <script>
+    
+    //8a
+    const arr1 = [10,20,30];
+    arr1[arr1.length-1] = 99;
+    console.log(arr1);
+
+    //8b
+    function getLastValue(arr){
+      return arr[arr.length-1];
+    }
+    console.log(getLastValue(arr1));
+
+    //8c
+    function arraySwap(arr){
+      const temp = arr[0];
+      arr[0] = arr[arr.length - 1];
+      arr[arr.length-1] = temp;
+      return arr;
+    }
+    console.log(`the swapped array is ${arraySwap(arr1)}`);
+
+    //8d
+    let arr2 = [];
+    for(let i=0; i<=10;i+=2){
+      arr2.push(i);
+    }
+    console.log(`[${arr2}]`);
+
+    //8e
+    arr2 = [];
+    for(let i=5;i>=0;i--){
+      arr2.push(i);
+    }
+    console.log(`[${arr2}]`);
+
+    //8f 8g
+    arr2 = [];
+    let i=0;
+    while(i<=10){
+      arr2.push(i);
+      i+=2;
+    }
+    console.log(`[${arr2}]`);
+
+    arr2 = [];
+    i = 5;
+    while(i>=0){
+      arr2.push(i);
+      i--;
+    }
+    console.log(`[${arr2}]`);
+
+  //8g 8h 
+   let arr3 = [1,2,3,4,5];
+   function numPlus1(arr){
+    let arr3 = [];
+    for(let i=0;i<arr.length;i++){
+      arr3.push(arr[i]+=1);
+    }
+    return arr3;
+   }
+   console.log(`num increased by one array [${numPlus1(arr3)}]`);
+
+  function addNum(arr,num){
+    for(let i=0 ;i<arr.length; i++){
+      arr[i] += num;
+    }
+    return arr;
+  }
+  console.log(arr3);
+  console.log(addNum(arr3,3));
+
+  arr3 = [4,5,6];
+  let arr4 = [1,2,3];
+  function addArray(arr1,arr2){
+    for(let i=0;i<arr1.length;i++){
+      arr1[i]+=arr2[i];
+    }
+    return arr1;
+  }
+  console.log(`${addArray(arr3,arr4)}`);
+
+  function countPositive(arr){
+    let count = 0;
+    for(let i=0;i<arr.length;i++){
+      if(arr[i]>0)
+      count++;
+    }
+    return count;
+  }
+  const arr5 = [-1, 1, 2, 3, -1 ];
+  console.log(`number of positives in [${arr5}] is ${countPositive(arr5)}`);
+  
+
+  
+  //8o,8p,8q
+  const words = ['search','hello','apple','grape','apple'];
+  function findWord(words,word){
+    for(let i=0;i<words.length;i++){
+    if(words[i] === word){
+      return i;
+    }
+    }
+    return -1;
+  }
+  if(findWord(words,'apple') === -1){
+    console.log('not found')
+  }
+  else{
+    console.log(`word found at index ${findWord(words,'apple')}`);
+  }
+
+  
+ 
+
+  //8r 8s 
+  let foods = ['apple','mango','eggs','eggs','shawarma','eggs'];
+  function removeEgg(foods){
+    let eggRemoved = [];
+    let count = 0;
+    for(let i=0;i<foods.length;i++){
+      if(foods[i] === 'eggs' && count < 2){
+        count++;
+        continue;
+      }
+      eggRemoved.push(foods[i]);
+    }
+    return eggRemoved;
+  }
+  console.log(`[${removeEgg(foods)}]`);
+  
+
+  //last 2 eggs removed
+  foods = ['apple','mango','eggs','eggs','shawarma','eggs'];
+  function removeEgg(foods){
+    foods.reverse();  
+    let eggRemoved = [];
+    let count = 0;
+    for(let i=0;i<foods.length;i++){
+      if(foods[i] === 'eggs' && count < 2){
+        count++;
+        continue;
+      }
+      eggRemoved.push(foods[i]);
+    }
+    return eggRemoved.reverse();
+  }
+  console.log(`[${removeEgg(foods)}]`);
+
+  //8u
+  const reversedFood = foods.slice().reverse();
+  console.log(`[${foods}]`);
+  console.log(`[${reversedFood}]`);
+  </script>
+</body>
+</html>
