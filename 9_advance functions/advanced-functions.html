@@ -58,6 +58,24 @@
     runGreeting(greeting); //calling 'runGreeting' and passing 'greeting'
 
     */
+
+    //setTimeout(function to run, time in miliseconds)
+    function timeout(){
+      //this will run synchronously
+      console.log('timeout');
+      console.log('timeout1');
+    }
+    setTimeout(timeout, 3000); //3000 - 3s
+
+    console.log('next line will be printed before greeting');
+    //this is called asynchronous code
+    //where computer doesnt wait for one line to execute before going to next line
+
+    //setInterval(function to run in future, time interval)
+    setInterval(function(){
+      console.log('interval');
+    }, 3000);
+    //this will keep running the function every 3s 
   </script>
 </body>
 </html>
