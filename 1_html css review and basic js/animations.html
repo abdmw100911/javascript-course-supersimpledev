@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION</title>
+    <style>
+        @keyframes moveRight{
+            from{transform:translateX(0);}
+            to{transform:translateX(100px);}
+        }
+        @keyframes moveLeft{
+            from{
+                transform:translateX(0);
+            }
+            to{
+                transform:translateX(-75px);
+            }
+        }
+        @keyframes shakeButton{
+            0%   { transform: translateX(0); }
+            25%  { transform: translateX(-5px); }
+            50%  { transform: translateX(5px); }
+            75%  { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .move-right-button{
+            animation: moveRight 2s ;
+        }
+        .move-left-button{
+            animation :moveLeft 2s ;
+        }
+        .shake-button{
+            animation: shakeButton 1s;
+        }
+    </style>
+</head>
+<body>
+    <button class="move-right-button">
+        move right
+    </button>
+    <button class="move-left-button">
+        move left
+    </button>
+    <button class="shake-button">
+        Shake button
+    </button>
+</body>
+</html>

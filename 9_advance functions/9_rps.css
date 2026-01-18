@@ -5,23 +5,58 @@ body{
   background-color: black;
 }
 
+/* move icons */
 .move-icon-rock,
 .move-icon-paper,
 .move-icon-scissor{
   height: 100px;
   width: 100px;
-  object-fit: contain;
   border-radius: 100px;
+  transition: transform 0.15s;
+}
+
+.move-icon-rock:active,
+.move-icon-paper:active,
+.move-icon-scissor:active{
+  transform: scale(0.85);
 }
 
 .move-button{
   padding: 15px;
   border: 2px solid white;
-  background-color: transparent;
-  color: white;
+  background: transparent;
   border-radius: 100px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+/* displays */
+.result-display{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.choice-display{
+  font-size: 25px;
+  margin-bottom: 75px;
+}
+
+.score-display{
+  font-size: 25px;
+}
+
+/* choice images */
+.choice-image{
+  height: 75px;
+  width: 75px;
+  border: 2px solid white;
+  border-radius: 100%;
+  padding: 15px 20px;
+  margin: 0 10px;
+  object-fit: contain;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .reset-score-button,
@@ -33,7 +68,6 @@ body{
   margin-top: 20px;
   margin-right: 20px;
   box-sizing: border-box;
-
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -53,28 +87,54 @@ body{
   box-shadow: none;
 }
 
-.result-display{
-  font-size: 25px;
-  font-weight: bold;
-  margin-top: 50px;
+/* slide animations */
+@keyframes slideFromLeft{
+  from{ transform: translateX(-60px); opacity: 0; }
+  to{ transform: translateX(0); opacity: 1; }
 }
 
-.choice-image{
-  height: 75px;
-  width: 75px;
-  object-fit: contain;
-  border: 2px solid white;
-  border-radius: 100%;
-  padding: 15px 20px;
-  margin-right: 10px;
-  margin-left: 10px;
+@keyframes slideFromRight{
+  from{ transform: translateX(60px); opacity: 0; }
+  to{ transform: translateX(0); opacity: 1; }
 }
 
-.choice-display{
-  font-size: 25px;
-  margin-bottom: 75px;
+.user-choice{
+  animation: slideFromLeft 0.3s ease forwards;
 }
 
-.score-display{
-  font-size: 25px;
+.computer-choice{
+  animation: slideFromRight 0.3s ease forwards;
 }
+
+/* winner scale */
+@keyframes winnerPop{
+  from{ transform: scale(1); }
+  to{ transform: scale(1.25); }
+}
+
+/* winner shake (scale included to prevent reset) */
+@keyframes shake{
+  0%{ transform: translateX(0) scale(1.25); }
+  25%{ transform: translateX(-4px) scale(1.25); }
+  50%{ transform: translateX(4px) scale(1.25); }
+  75%{ transform: translateX(-4px) scale(1.25); }
+  100%{ transform: translateX(0) scale(1.25); }
+}
+
+/* user winner */
+.user-winner{
+  animation:
+    slideFromLeft 0.3s ease forwards,
+    winnerPop 0.2s ease forwards 0.35s,
+    shake 0.3s ease forwards 0.55s;
+}
+
+/* computer winner */
+.computer-winner{
+  animation:
+    slideFromRight 0.3s ease forwards,
+    winnerPop 0.2s ease forwards 0.35s,
+    shake 0.3s ease forwards 0.55s;
+}
+
+
