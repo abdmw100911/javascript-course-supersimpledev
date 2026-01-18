@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO-LIST</title>
+    <link rel="stylesheet" href="9_todolist.css">
+  </head>
+  <body>
+
+    <p>To Do List</p>
+
+    <div class="todo-input-grid">
+      <input type="text" placeholder="Todo name" class="js-name-input name-input">
+
+      <input type="date" class="js-date-input date-input">
+
+      <button onclick="
+      addTodo();
+      " class="add-button">
+        Add
+      </button>
+    </div>  
+    
+    <div class = "js-display todo-grid"></div>
+
+    <script src="9_todolist.js">
+    </script>
+
+  </body>
+</html>

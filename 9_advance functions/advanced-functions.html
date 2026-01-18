@@ -59,6 +59,8 @@
 
     */
 
+    /*
+
     //setTimeout(function to run, time in miliseconds)
     function timeout(){
       //this will run synchronously
@@ -76,6 +78,29 @@
       console.log('interval');
     }, 3000);
     //this will keep running the function every 3s 
+
+    */
+
+
+    //additional way to loop through array
+    
+    const loopArray = ['hello','hi','how are you','whassuppp'];
+
+    loopArray.forEach(function(value,index){
+      //using the 'continue' feature in forEach()
+      if(value === 'hi'){
+        return;
+        //this will skip 'hi' and not execute the below code
+      }
+      console.log(index);
+      console.log(value);
+    });
+
+    //it loops through every elemenet of array and passes the value and index to the function
+
+    //###we cannot replicate the 'break' feature of 'for-loop' in forEach, so if break is to be used, then it is better to use for loop, otherwise forEach is preferred
+
+
   </script>
 </body>
 </html>
