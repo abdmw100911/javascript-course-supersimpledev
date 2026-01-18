@@ -24,6 +24,14 @@
             75%  { transform: translateX(-5px); }
             100% { transform: translateX(0); }
         }
+        @keyframes appear {
+            from {
+                opacity:0;
+            }
+            to{
+                opacity:1;
+            }
+        }
         .move-right-button{
             animation: moveRight 2s ;
         }
@@ -32,6 +40,10 @@
         }
         .shake-button{
             animation: shakeButton 1s;
+        }
+        .appear-button{
+            /*animation: name duration timing-function fill-mode;*/
+            animation: appear 1s ease forwards ;
         }
     </style>
 </head>
@@ -44,6 +56,9 @@
     </button>
     <button class="shake-button">
         Shake button
+    </button>
+    <button class="appear-button">
+        fade appear button
     </button>
 </body>
 </html>
