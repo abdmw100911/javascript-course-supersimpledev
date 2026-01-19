@@ -6,12 +6,13 @@
   <title>Advanced functions</title>
 </head>
 <body>
+  <!--Event listener part-->
   <button onclick = "" class="js-click-button">
     Click
   </button>
   <script>
 
-    /*
+    
     //##this syntax of defining functions allows hoisting, where it doesnt matter whether you define the function first or call it first
     function greeting(){
       console.log('hello');
@@ -60,9 +61,9 @@
 
     runGreeting(greeting); //calling 'runGreeting' and passing 'greeting'
 
-    */
+    
 
-    /*
+    
 
     //setTimeout(function to run, time in miliseconds)
     function timeout(){
@@ -82,9 +83,9 @@
     }, 3000);
     //this will keep running the function every 3s 
 
-    */
+    
 
-/*
+
     //additional way to loop through array
     
     const loopArray = ['hello','hi','how are you','whassuppp'];
@@ -103,8 +104,8 @@
 
     //###we cannot replicate the 'break' feature of 'for-loop' in forEach, so if break is to be used, then it is better to use for loop, otherwise forEach is preferred
 
-*/
-    /*
+
+    
     //arrow functions
 
     const arrowFunction = (param,param1) =>{
@@ -128,9 +129,9 @@
 
     //arrow functions are recommended to use when we are passing a function to another function
 
-    const loopArray = ['hello','hi','how are you','whassuppp'];
+    const loopArray1 = ['hello','hi','how are you','whassuppp'];
 
-    loopArray.forEach((value,index) => {
+    loopArray1.forEach((value,index) => {
       //using the 'continue' feature in forEach()
       if(value === 'hi'){
         return;
@@ -141,7 +142,7 @@
     });
 
     //arrow functions inside object
-    const obj = {
+    const obj1 = {
       method: ()=>{
         console.log('this is a method created using arrow function');
       },
@@ -150,11 +151,11 @@
         console.log('this is a method created using shorthand shortcut of object');
       }
     };
-    obj.method();
-    obj.method1();
-    */
+    obj1.method();
+    obj1.method1();
+    
 
-    /*
+    
     //arrow function with eventListener
     //addEventListener(event,function);
 
@@ -179,7 +180,7 @@
 
     //this gives more control than onclick attribute
 
-    */
+    
 
     //more methods of array
     //.filter() : like forEach(function(value,index)), it loops through array and uses value and index , additionally , it 'creates a new array' and stores values inside the new array if return true; , and if return false; it doesnt store value inside new array

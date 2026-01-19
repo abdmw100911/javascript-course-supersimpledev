@@ -81,7 +81,7 @@ function displayTodo(){
 
   displayElem.innerHTML = todoListHtml;
 
-  //this will make a list of all the buttons with class = "js-done-button", it will have index
+  //this(below) will make a list of all the buttons with class = "js-done-button", it will have index
   //##console.log(document.querySelectorAll('.js-done-button'));
 
   //so we will loop through this list using forEach()
@@ -97,7 +97,7 @@ function displayTodo(){
   })
 }
 
-//creating event listeners for buttons 
+//creating event listener for add button 
 const addButtonElem = document.querySelector('.js-add-button');
 
 addButtonElem.addEventListener('click',()=>{
