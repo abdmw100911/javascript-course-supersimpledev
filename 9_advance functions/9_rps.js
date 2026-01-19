@@ -166,3 +166,20 @@ resetButtonElem.addEventListener('click',()=>{
 autoplayButtonElem.addEventListener('click',()=>{
   autoPlay();
 })
+
+//adding keydown event listener to body element to play game with 'r','p','s'
+
+document.body.addEventListener('keydown',(event)=>{
+  if(!isAutoPlaying){
+    if(event.key === 'r'){
+    playGame('Rock');
+    }
+    else if(event.key === 'p'){
+      playGame('Paper');
+    }
+    else if(event.key === 's'){
+      playGame('Scissor');
+    }
+  }
+  
+})
