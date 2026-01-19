@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHALLENGE EXERCISE</title>
+</head>
+<body>
+  <button onclick = "
+  displayAddToCart();
+  ">Add to Cart</button>
+  <p class="js-added-display"></p>
+
+  <button onclick="addMsg()">
+    Add
+  </button>
+  <button onclick="removeMsg()">
+    Remove
+  </button>
+
+  <script>
+    //9f
+    let timeOutId;
+    function displayAddToCart(){
+      document.querySelector('.js-added-display').innerText = 'Added';
+
+      //to clear the previous timeout generated due to multiple clicks
+      clearTimeout(timeOutId);
+
+      timeOutId = setTimeout(function(){
+        document.querySelector('.js-added-display').innerText = '';
+      },2000)
+    }
+
+    //9g 9h 9i
+    let msg = 2;
+    let intervalId;
+    function changeTitle(){
+
+      //prevents creating multiple intervals due to multiple clicks
+      if(intervalId)
+      return;
+
+      //creates interval where msg is displayed in title every second
+      intervalId = setInterval(function(){
+        document.title = `(${msg} New Message)`;
+      },1000);
+      
+    }
+
+    function addMsg(){
+      msg++;
+      //msg === 1 means the message count changed from 0 → 1
+      //This is the only moment when a new interval must be started
+      if(msg === 1)
+      changeTitle();
+    }
+    
+    function removeMsg(){
+      if(msg>0){
+        msg--;
+        if(msg === 0){
+          //stop the interval when msg = 0
+          clearInterval(intervalId);
+          //reset intervalId so that new interval can be created in changetitle()
+          intervalId = null;
+          //when msg = 0 , make title as app
+          setTimeout(function(){
+            document.title = 'App';
+          },1000);
+        }
+        //unnecessary , because new interval creation is not required
+        /*else{
+          changeTitle(); 
+        }*/
+      }
+      
+    }
+  </script>
+</body>
+</html>

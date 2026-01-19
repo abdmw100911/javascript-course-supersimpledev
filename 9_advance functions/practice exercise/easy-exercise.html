@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EASY EXERCISE</title>
+</head>
+<body>
+  <!--9c-->
+  <button onclick="
+    setTimeout(function(){
+      document.querySelector('.js-finito').innerText = 'Tera khel khatam hai Buddhe !!';
+    },1000);
+    " class = "js-finito">
+    Lewa is the best striker in the World
+  </button>
+
+  <!--9d-->
+   <button onclick="
+    setTimeout(function(){
+      document.querySelector('.js-finitoo').innerText = 'Tu abhi ke abhi Saudi nikal';
+    },1000);
+    document.querySelector('.js-finitoo').innerText = 'Tera khel khatam hai Buddhe !!'
+    " class = "js-finitoo">
+
+    Lewa is the best striker in the World
+
+  </button>
+
+  <br><br>
+
+  <!--9e-->
+  <button onclick = "
+  displayAddToCart();
+  ">Add to Cart</button>
+ <p class="js-added-display"></p>
+
+  <script>
+    //9a
+    const add = function(){
+      console.log(2+3);
+    }
+    add();
+    add();
+
+    //9b
+    function runTwice(fun){
+      fun();
+      fun();
+    }
+    runTwice(add);
+
+    //9e 9f
+    let timeOutId;
+    function displayAddToCart(){
+      document.querySelector('.js-added-display').innerText = 'Added';
+
+      //to clear the previous timeout generated due to multiple clicks
+      clearTimeout(timeOutId);
+
+      timeOutId = setTimeout(function(){
+        document.querySelector('.js-added-display').innerText = '';
+      },2000)
+    }
+  </script>
+</body>
+</html>
