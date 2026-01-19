@@ -6,7 +6,33 @@
   <title>Advanced functions</title>
 </head>
 <body>
+  <button onclick = "" class="js-click-button">
+    Click
+  </button>
   <script>
+
+    //addEventListener(event,function);
+
+    //better way than onclick 
+    clickButtonElem = document.querySelector('.js-click-button');
+
+    //function to run in eventListener
+    const keyDown = () =>{
+      console.log('pressed key');
+    };
+
+    //adding a eventListener
+    clickButtonElem.addEventListener('keydown',keyDown);
+
+    //removing a event Listener
+    clickButtonElem.removeEventListener('keydown',keyDown);
+
+    //adding a eventListener
+    clickButtonElem.addEventListener('click', ()=>{
+      console.log('Clicked!')
+    });
+
+    //this gives more control than onclick attribute
 
     /*
     //##this syntax of defining functions allows hoisting, where it doesnt matter whether you define the function first or call it first
@@ -81,7 +107,7 @@
 
     */
 
-
+/*
     //additional way to loop through array
     
     const loopArray = ['hello','hi','how are you','whassuppp'];
@@ -100,6 +126,58 @@
 
     //###we cannot replicate the 'break' feature of 'for-loop' in forEach, so if break is to be used, then it is better to use for loop, otherwise forEach is preferred
 
+*/
+    /*
+    //arrow functions
+
+    const arrowFunction = (param,param1) =>{
+      console.log('hello arrow function');
+      console.log([param,param1]);
+    };
+    arrowFunction('hello','world');
+
+    //shortcut of arrow function
+    //() are optional if the function contains only one parameter
+
+    const oneParam = param1 =>{
+      console.log(param1);
+    }
+    oneParam('1 parameter');
+
+    //{} and return are optional if the function is of one line
+
+    const oneLineFun = () => 'one line function statement';
+    console.log(oneLineFun());
+
+    //arrow functions are recommended to use when we are passing a function to another function
+
+    const loopArray = ['hello','hi','how are you','whassuppp'];
+
+    loopArray.forEach((value,index) => {
+      //using the 'continue' feature in forEach()
+      if(value === 'hi'){
+        return;
+        //this will skip 'hi' and not execute the below code
+      }
+      console.log(index);
+      console.log(value);
+    });
+
+    //arrow functions inside object
+    const obj = {
+      method: ()=>{
+        console.log('this is a method created using arrow function');
+      },
+
+      method1(){
+        console.log('this is a method created using shorthand shortcut of object');
+      }
+    };
+    obj.method();
+    obj.method1();
+    */
+
+    //arrow function with eventListener
 
   </script>
 </body>
