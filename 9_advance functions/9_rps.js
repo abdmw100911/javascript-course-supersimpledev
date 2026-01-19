@@ -25,6 +25,7 @@ function resetScore(){
 
 function playGame(userMove){
 
+
   // computer randomly picks a move
   const computerMove = pickComputerMove();
   let result = '';
@@ -126,9 +127,42 @@ function autoPlay(){
       playGame(pickComputerMove());
     }, 2000);
     isAutoPlaying = true;
+    //usercanplay = false;
   }
   else{
     clearInterval(intervalId);
     isAutoPlaying = false;
+    //usercanplay = true;
   }
 }
+
+//eventlistener for each button
+const rockButtonElem = document.querySelector('.js-rock-button');
+const paperButtonElem = document.querySelector('.js-paper-button');
+const scissorButtonElem = document.querySelector('.js-scissor-button');
+const resetButtonElem = document.querySelector('.js-reset-score-button');
+const autoplayButtonElem = document.querySelector('.js-auto-play-button');
+
+//added a small if condition to ensure that if autoplay is on , user cant play
+rockButtonElem.addEventListener('click',()=>{
+   if(isAutoPlaying === false)
+    playGame('Rock');
+});
+
+paperButtonElem.addEventListener('click',()=>{
+   if(isAutoPlaying === false)
+    playGame('Paper');
+});
+
+scissorButtonElem.addEventListener('click',()=>{
+   if(isAutoPlaying === false)
+    playGame('Scissor');
+});
+
+resetButtonElem.addEventListener('click',()=>{
+  resetScore()
+})
+
+autoplayButtonElem.addEventListener('click',()=>{
+  autoPlay();
+})

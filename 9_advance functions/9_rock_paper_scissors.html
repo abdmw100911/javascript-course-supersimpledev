@@ -8,21 +8,15 @@
   <h1>
     Rock Paper Scissors
   </h1>
-  <button onclick="
-    playGame('Rock');
-  " class="move-button">
+  <button class="move-button js-rock-button">
     <img src="../projects/rps images/Rock.png" class="move-icon-rock">
   </button>
 
-  <button onclick="
-    playGame('Paper');
-  " class="move-button">
+  <button class="move-button js-paper-button">
       <img src="../projects/rps images/Paper.png" class="move-icon-paper">
   </button>
 
-  <button onclick="
-    playGame('Scissor');
-  " class="move-button">
+  <button class="move-button js-scissor-button">
       <img src="../projects/rps images/Scissor.png" class="move-icon-scissor">
   </button>
 
@@ -35,12 +29,10 @@
   <p class = "js-score-display score-display" >
   </p>
 
-  <button onclick="
-  resetScore();
-  " class="reset-score-button"> 
+  <button class="reset-score-button js-reset-score-button"> 
     Reset Score
   </button>
-  <button class="auto-play-button" onclick="autoPlay();">
+  <button class="auto-play-button js-auto-play-button">
     Auto play
   </button>
   <script src="9_rps.js">
