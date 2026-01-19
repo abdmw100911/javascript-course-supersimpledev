@@ -19,7 +19,7 @@
       transition:opacity 0.15s;
     }
     .add-button:hover{
-      opacity: 0.9;
+      opacity: 0.8;
     }
     .add-button:active{
       opacity: 1;
@@ -34,7 +34,7 @@
       transition:opacity 0.15s;
     }
     .done-button:hover{
-      opacity: 0.9;
+      opacity: 0.8;
     }
     .done-button:active{
       opacity: 1;

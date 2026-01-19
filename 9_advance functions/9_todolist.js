@@ -1,6 +1,8 @@
+
 let todoList = [];
 
 displayTodo();
+
 
 function addTodo(){
   //take name input
@@ -43,10 +45,7 @@ function displayTodo(){
 
     <div>${todoObject.dueDate}</div>
 
-    <button onclick="
-    todoList.splice(${i},1);
-    displayTodo();
-    " class = "done-button">Done
+    <button class = "done-button js-done-button">Done
     </button>
     `;
     todoListHtml += html;
@@ -81,4 +80,26 @@ function displayTodo(){
   const displayElem = document.querySelector('.js-display');
 
   displayElem.innerHTML = todoListHtml;
+
+  //this will make a list of all the buttons with class = "js-done-button", it will have index
+  //##console.log(document.querySelectorAll('.js-done-button'));
+
+  //so we will loop through this list using forEach()
+  //forEach() gives 2 params, value and index, value is the done button element and index is index of each done button element
+  document.querySelectorAll('.js-done-button').forEach((doneButtonElem,index)=>{
+
+    //we will add event listener to each of the done button element
+    doneButtonElem.addEventListener('click',()=>{
+      //this will delete the todo-object at 'index' in the todoList array
+      todoList.splice(index,1);
+      displayTodo();
+    })
+  })
 }
+
+//creating event listeners for buttons 
+const addButtonElem = document.querySelector('.js-add-button');
+
+addButtonElem.addEventListener('click',()=>{
+  addTodo();
+});
