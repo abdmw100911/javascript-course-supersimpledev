@@ -11,29 +11,6 @@
   </button>
   <script>
 
-    //addEventListener(event,function);
-
-    //better way than onclick 
-    clickButtonElem = document.querySelector('.js-click-button');
-
-    //function to run in eventListener
-    const keyDown = () =>{
-      console.log('pressed key');
-    };
-
-    //adding a eventListener
-    clickButtonElem.addEventListener('keydown',keyDown);
-
-    //removing a event Listener
-    clickButtonElem.removeEventListener('keydown',keyDown);
-
-    //adding a eventListener
-    clickButtonElem.addEventListener('click', ()=>{
-      console.log('Clicked!')
-    });
-
-    //this gives more control than onclick attribute
-
     /*
     //##this syntax of defining functions allows hoisting, where it doesnt matter whether you define the function first or call it first
     function greeting(){
@@ -177,8 +154,68 @@
     obj.method1();
     */
 
+    /*
     //arrow function with eventListener
+    //addEventListener(event,function);
 
+    //better way than onclick 
+    clickButtonElem = document.querySelector('.js-click-button');
+
+    //function to run in eventListener
+    const keyDown = () =>{
+      console.log('pressed key');
+    };
+
+    //adding a eventListener
+    clickButtonElem.addEventListener('keydown',keyDown);
+
+    //removing a event Listener
+    clickButtonElem.removeEventListener('keydown',keyDown);
+
+    //adding a eventListener
+    clickButtonElem.addEventListener('click', ()=>{
+      console.log('Clicked!')
+    });
+
+    //this gives more control than onclick attribute
+
+    */
+
+    //more methods of array
+    //.filter() : like forEach(function(value,index)), it loops through array and uses value and index , additionally , it 'creates a new array' and stores values inside the new array if return true; , and if return false; it doesnt store value inside new array
+
+    let arr = [1,2,3,4,5];
+//new array is reassingned - this creates a new array
+//    |                         |
+    arr = arr.filter((value,index)=>{
+      return false;
+    });
+    console.log(arr);
+
+    //suppose i want only positive numbers
+    arr = [1,-1,1,2,-1];
+    arr = arr.filter((num,i)=>{
+      if(num<0){
+        return false;
+      }
+      else{
+        return true;
+      }
+      //shorctcut below
+      //return num>=0;
+    });
+    console.log(arr);
+
+    //using this we can filter array based on criteria
+
+    //.map():works same as forEach and filter , but it is used to 'modify the array'
+
+    arr = [1,2,3,4,5];
+    arr = arr.map((value,i)=>{
+      return value*2;
+    });
+    //takes each value of the array and multiplies it by 2 
+    console.log(arr);
   </script>
 </body>
 </html>
