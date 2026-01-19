@@ -37,7 +37,7 @@ function displayTodo(){
   //reset the html inside div
   let todoListHtml = '';
 
-  todoList.forEach(function(todoObject,i){
+  todoList.forEach((todoObject,i) => {
     const html = `
     <div>${todoObject.todoName}</div>
 
