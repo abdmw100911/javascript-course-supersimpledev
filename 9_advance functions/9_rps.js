@@ -9,7 +9,11 @@ let score = JSON.parse(localStorage.getItem('score')) || {
 displayScoreElement();
 
 // function for resetting score
-function resetScore(){
+
+function resetScore(resetConfirm){
+  if(resetConfirm === false){
+    return;
+  }
   score = {
     wins: 0,
     losses: 0,
@@ -163,8 +167,32 @@ scissorButtonElem.addEventListener('click',()=>{
     playGame('Scissor');
 });
 
+//reset confirmation element
+const resetConfirmElem = document.querySelector('.js-reset-confirmation');
+
+//function to add reset confirmation html dynamically
+function addResetConfirmation(){
+  resetConfirmElem.innerHTML = `
+  <p style = "font-size:25px;margin-top:30px;">Are you Sure ?</p>
+
+  <button onclick="
+  resetScore(true);
+   resetConfirmElem.innerHTML = '';
+  " class= "reset-yes-button">
+  Yes
+  </button>
+
+  <button onclick="
+  resetScore(false);
+   resetConfirmElem.innerHTML = '';
+  " class = "reset-no-button">
+  No
+  </button>
+  `;
+}
+
 resetButtonElem.addEventListener('click',()=>{
-  resetScore()
+ addResetConfirmation();
 })
 
 autoplayButtonElem.addEventListener('click',()=>{
@@ -184,6 +212,22 @@ document.body.addEventListener('keydown',(event)=>{
     else if(event.key === 's'){
       playGame('Scissor');
     }
+    else if(event.key === 'a'){
+      autoPlay();
+    }
+  }
+
+  //s key to stop autoplaying
+  if(isAutoPlaying){
+    if(event.key === 's'){
+      autoPlay();
+    } 
+  }
+
+  //backspace to reset the score
+  //this will run regardless of autoplay
+  if(event.key === 'Backspace'){
+    addResetConfirmation();
   }
   
 })

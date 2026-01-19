@@ -138,4 +138,25 @@ body{
     shake 0.3s ease forwards 0.55s;
 }
 
+.reset-yes-button,.reset-no-button{
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.reset-yes-button:hover,.reset-no-button:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.reset-yes-button:active,.reset-no-button:active{
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
 
