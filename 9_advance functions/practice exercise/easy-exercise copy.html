@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EASY EXERCISE</title>
+</head>
+<body>
+  <!--here onclick is replaced with evenListeners and arrowfunctions are used where necessary-->
+
+  <!--9c-->
+  <button class = "js-finito">
+    Lewa is the best striker in the World
+  </button>
+
+  <!--9d-->
+   <button class = "js-finitoo">
+
+    Lewa is the best striker in the World
+
+  </button>
+
+  <br><br>
+
+  <!--9e-->
+  <button class="js-addtocart-button">Add to Cart</button>
+ <p class="js-added-display"></p>
+
+  <script>
+    //9a
+    /*
+    const add = function(){
+      console.log(2+3);
+    }*/
+   const add = ()=>{
+    console.log(2+3);
+   }
+    add();
+    add();
+
+    //9b
+    /*
+    function runTwice(fun){
+      fun();
+      fun();
+    }*/
+   const runTwice = (fun)=>{
+    fun();
+    fun();
+   }
+   runTwice(add);
+
+   //9c: settimout function
+   const finitoButtonElem = document.querySelector('.js-finito');
+   finitoButtonElem.addEventListener('click',()=>{
+    setTimeout(()=>{
+      finitoButtonElem.innerText = 'Tera khel khatam hai Buddhe !!';
+    },1000);
+   })
+
+   //9d:first display some text , then change it after 1s
+   const finitoButtonElem1 = document.querySelector('.js-finitoo');
+   finitoButtonElem1.addEventListener('click',()=>{
+    setTimeout(()=>{
+      finitoButtonElem1.innerText = 'Tu abhi ke abhi Saudi nikal';
+    },1000);
+    finitoButtonElem1.innerText = 'Tera khel khatam hai Buddhe !!';
+   });
+
+    //9e 9f 
+    let timeOutId;
+    const addButtonElem = document.querySelector('.js-addtocart-button')
+    const addedDisplayElem = document.querySelector('.js-added-display');
+
+    addButtonElem.addEventListener('click',()=>{
+      addedDisplayElem.innerText = 'Added';
+
+      //to clear the previous timeout generated due to multiple clicks
+      clearTimeout(timeOutId);
+
+      timeOutId = setTimeout(function(){
+        addedDisplayElem.innerText = '';
+      },2000)
+    })
+  </script>
+</body>
+</html>

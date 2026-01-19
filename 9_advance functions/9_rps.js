@@ -122,17 +122,21 @@ let intervalId;
 // function to toggle auto play
 function autoPlay(){
   if(!isAutoPlaying){
+    //changing inner text of the button to stop autoplay
+    autoplayButtonElem.innerText = 'Stop Auto Play'
+
     intervalId = setInterval(() => {
       // play game automatically every 2 seconds
       playGame(pickComputerMove());
     }, 2000);
     isAutoPlaying = true;
-    //usercanplay = false;
+    
   }
   else{
     clearInterval(intervalId);
     isAutoPlaying = false;
-    //usercanplay = true;
+    //changing innertext back to autoplay
+    autoplayButtonElem.innerText = 'Auto Play'
   }
 }
 

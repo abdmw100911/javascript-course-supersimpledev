@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Easy Exercise 2</title>
+</head>
+<body>
+	<script>
+		//9j 9k:multiplication arrow function 
+
+		//shortcut
+		const multiply = (num1,num2) =>  num1*num2;
+
+		//normal
+		/*
+		const multiply = (num1,num2) =>{
+			return num1*num2;
+		}*/
+
+		console.log(multiply(2,3));
+
+		//9l: count positive using forEach()
+		const arr = [1,2,3,-1,-2,4,5,6];
+
+		const countPositive = (arr) =>{
+			let count = 0;
+			arr.forEach((value,index)=>{
+				if(value>=0)
+				count++;
+			})
+			return count;
+		};
+
+		console.log(`${countPositive(arr)} is the number or positive values in [${arr}]`);
+
+		//9m: each number of array increases by one , using map() instead of loop
+
+		let arr1 = [5,1,7,9,3];
+		const addNum = (arr,num) =>{
+			arr = arr.map((value,index)=>{
+				return value+num;
+			});
+			return arr;
+		}
+		arr1 = addNum(arr1,1);
+		console.log(arr1);
+
+		//9n: removeEggs using filer method of arrays 
+		let arr2 = ['rice','eggs','chicken'];
+		const removeEggs = (arr) =>{
+			arr = arr.filter((value,index) =>{
+				if(value==='eggs'){
+					return false;
+				}
+				else{
+					return true;
+				}
+			});
+			return arr;
+		}
+		arr2 = removeEggs(arr2);
+		console.log(arr2);
+
+		//9o : removing the first 2 eggs only
+		let arr3 = ['rice','eggs','chicken','eggs','eggs'];
+		const removeEggs1 = (arr) =>{
+			let count = 0;
+			arr = arr.filter((value,index) =>{
+				if(value==='eggs' && count<2){
+					count++;
+					return false;
+				}
+				else{
+					return true;
+				}
+			});
+			return arr;
+		};
+
+		console.log(removeEggs1(arr3));
+	</script>
+</body>
+</html>

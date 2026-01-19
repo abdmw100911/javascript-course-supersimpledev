@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHALLENGE EXERCISE</title>
+</head>
+<body>
+  <!--onclick is replaced with eventListeners -->
+  <button class="js-add-button">
+    Add
+  </button>
+  <button class="js-remove-button">
+    Remove
+  </button>
+
+  <script>
+
+    const addButtonElem = document.querySelector('.js-add-button');
+    const removeButtonElem = document.querySelector('.js-remove-button');
+
+    let msg = 2;
+    let intervalId;
+
+    changeTitle();
+
+    addButtonElem.addEventListener('click',()=>{
+      addMsg();
+    });
+
+    removeButtonElem.addEventListener('click',()=>{
+      removeMsg();
+    })
+
+    function changeTitle(){
+
+      //prevents creating multiple intervals due to multiple clicks
+      if(intervalId)
+      return;
+
+      //creates interval where msg is displayed in title every second
+      intervalId = setInterval(function(){
+        document.title = `(${msg}) New Message`;
+      },1000);
+      
+    }
+
+    function addMsg(){
+      msg++;
+      //msg === 1 means the message count changed from 0 → 1
+      //This is the only moment when a new interval must be started
+      if(msg === 1)
+      changeTitle();
+    }
+    
+    function removeMsg(){
+      if(msg>0){
+        msg--;
+        if(msg === 0){
+          //stop the interval when msg = 0
+          clearInterval(intervalId);
+          //reset intervalId so that new interval can be created in changetitle()
+          intervalId = null;
+          //when msg = 0 , make title as app
+          setTimeout(function(){
+            document.title = 'App';
+          },1000);
+        }
+        
+      }
+      
+    }
+  </script>
+</body>
+</html>
