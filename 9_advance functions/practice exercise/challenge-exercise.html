@@ -33,6 +33,7 @@
     //9g 9h 9i
     let msg = 2;
     let intervalId;
+    changeTitle();
     function changeTitle(){
 
       //prevents creating multiple intervals due to multiple clicks
@@ -41,7 +42,7 @@
 
       //creates interval where msg is displayed in title every second
       intervalId = setInterval(function(){
-        document.title = `(${msg} New Message)`;
+        document.title = `(${msg}) New Message`;
       },1000);
       
     }
